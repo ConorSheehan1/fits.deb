@@ -1,0 +1,8 @@
+#!/usr/bin/make -f
+# requires tabs not spaces
+
+%:
+	dh $@
+
+override_dh_auto_install:
+	$(MAKE) DESTDIR=$$(pwd)/debian/fits prefix=/usr install
