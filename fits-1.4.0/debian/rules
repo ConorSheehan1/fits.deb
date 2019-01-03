@@ -1,8 +1,11 @@
 #!/usr/bin/make -f
 # requires tabs not spaces
 
-%:
-	dh $@
+prefix = /usr/local
 
-override_dh_auto_install:
-	$(MAKE) DESTDIR=$$(pwd)/debian/fits prefix=/usr install
+binary:
+	ln -s fits.sh fits
+# no need to build project, already built with ant in .zip dist
+build: ;
+clean:
+	rm -rf fits
