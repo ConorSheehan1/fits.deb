@@ -14,3 +14,4 @@ debhelper-build-stamp
 /*/debian/files
 /*/hello
 /tutorial-1/packageroot/usr
+*.bak

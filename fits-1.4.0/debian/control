@@ -1,11 +1,15 @@
 Source: fits
-Maintainer: Conor Sheehan <conor.sheehan.dev@gmail.com>
-Section: misc
+Section: unknown
 Priority: optional
-Standards-Version: 3.9.2
-Build-Depends: debhelper (>= 9)
+Maintainer: virt <virt@unknown>
+Build-Depends: debhelper (>=9)
+Standards-Version: 3.9.6
+Homepage: <insert the upstream URL, if relevant>
+#Vcs-Git: git://anonscm.debian.org/collab-maint/fits.git
+#Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/fits.git
 
 Package: fits
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: fits - harvard file information tool set
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>

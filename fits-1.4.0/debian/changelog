@@ -1,5 +1,5 @@
-fits (1.4.0) UNRELEASED; urgency=medium
+fits (1.4.0-1) unstable; urgency=medium
 
-  * Initial release.
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
 
- -- Conor Sheehan <conor.sheehan.dev@gmail.com>  Thu, 03 Jan 2019 15:44:23 +0000
+ -- virt <virt@unknown>  Fri, 04 Jan 2019 11:00:08 +0100
