@@ -19,6 +19,7 @@ for older / different flavours of debian
 sudo dpkg -i fits.deb
 # may be required if you don't have a java runtime environment >= 7
 sudo apt-get -f install
+```
 
 ## Dev notes
 
