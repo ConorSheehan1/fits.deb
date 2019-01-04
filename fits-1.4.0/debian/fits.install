@@ -1,6 +1,8 @@
 # ./* usr/share/fits             # can't copy debian into itself
 # ./!(debian/*) usr/share/fits/  # missing files !(debian)
 
-lib usr/share/fits/lib
-./*.sh usr/share/fits
-
+./*.sh           usr/share/fits
+./*.properties   usr/share/fits
+lib              usr/share/fits/lib
+tools            usr/share/fits/tools
+xml              usr/share/fits/xml
