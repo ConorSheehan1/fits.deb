@@ -9,9 +9,16 @@ For more information on fits see:
 https://github.com/harvard-lts/fits  
 https://projects.iq.harvard.edu/fits
 
-## TODO 
+## Installation
 
-sign changes with gpg key
+for ubuntu >= 16.04  
+`sudo apt install ./fits.deb`
+
+for older / different flavours of debian  
+```
+sudo dpkg -i fits.deb
+# may be required if you don't have a java runtime environment >= 7
+sudo apt-get -f install
 
 ## Dev notes
 
@@ -41,14 +48,7 @@ add debian/fits.install, debian/fits.dirs with the necessary files / dirs
 build the deb file (unsigned for now)  
 `debuild -us -uc --lintian-opts --profile debian`
 
+## TODO
 
-install! for ubuntu >= 16.04
-`sudo apt install ./fits.deb`
-
-for older / different flavours of debian
-```
-sudo dpkg -i fits.deb
-# may be required if you don't have a java runtime environment >= 7
-sudo apt-get -f install
-```
+sign changes with gpg key
 

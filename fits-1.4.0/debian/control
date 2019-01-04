@@ -1,15 +1,14 @@
 Source: fits
-Section: unknown
+Section: cli-mono
 Priority: optional
-Maintainer: virt <virt@unknown>
+Maintainer: Conor Sheehan <conor.sheehan.dev@gmail.com>
 Build-Depends: debhelper (>=9)
 Standards-Version: 3.9.6
-Homepage: <insert the upstream URL, if relevant>
-#Vcs-Git: git://anonscm.debian.org/collab-maint/fits.git
-#Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/fits.git
+Homepage: http://fitstool.org
+Vcs-Git: git@github.com:ConorSheehan1/fits.deb.git
+Vcs-Browser: https://github.com/ConorSheehan1/fits.deb
 
 Package: fits
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}, default-jre-headless | java7-runtime-headless
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Description: Harvard File Information Tool Set
