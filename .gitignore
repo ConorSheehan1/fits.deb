@@ -17,3 +17,4 @@ debhelper-build-stamp
 /tutorial-1/packageroot/usr
 *.bak
 *.zip
+fits-1.4.0/debian/fits
