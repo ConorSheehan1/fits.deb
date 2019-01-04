@@ -12,15 +12,24 @@ https://projects.iq.harvard.edu/fits
 ### TODO
 Make changes to fits.xml as patch, as per https://github.com/harvard-lts/fits/issues/160
 
+get fits  
+`wget https://github.com/harvard-lts/fits/releases/download/1.4.0/fits-1.4.0.zip -O ~/Workspace/fits.deb/fits-1.4.0.zip`
+
+extract it  
+`unzip fits-1.4.0.zip -d fits-1.4.0`
+
 requirements for build  
 `sudo apt-get install build-essential devscripts debhelper dh-make`
 
-extract fits  
-`unzip $fits.zip`
+run dh_make to build orig tar.gz and debian files  
+```
+cd fits-1.4.0
+dh_make --createorig
+```
 
-move to semantic version e.g
-`mv fits fits-1.4.0`
-
-run dh_make to build orig tar.gz and debian files
-`cd fits-1.4.0 && dh_make`
+patch the fits.xml file  
+```
+# edit xml/fits.xml
+dpkg-source --commit
+```
 
