@@ -1,0 +1,10 @@
+os: linux
+dist: xenial
+
+before_install:
+  - sudo apt-get install -y build-essential devscripts debhelper dh-make
+  - cd fits-1.4.0
+  - dh_make --createorig --native --single --yes
+  - debuild -us -uc --lintian-opts --profile debian
+script:
+  - sudo apt install ../fits_1.4.0-1_all.deb
