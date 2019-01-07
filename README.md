@@ -21,6 +21,14 @@ sudo dpkg -i fits.deb
 sudo apt-get -f install
 ```
 
+To uninstall:
+
+`sudo apt remove fits`
+
+or 
+
+`sudo dpkg -r ./fits.deb`
+
 ## Dev notes
 
 get fits  

@@ -4,8 +4,8 @@ dist: xenial
 before_install:
   - sudo apt-get install -y build-essential devscripts debhelper dh-make
   - cd fits-1.4.0
-  - dh_make --yes --createorig --single
-  # warning about no top level make file, using .install and .dirs instead
-  - debuild -us -uc --lintian-opts --profile debian || true
+  # # warning about no top level make file, using .install and .dirs instead
+  # - dh_make --yes --createorig --single || true
+  - debuild -us -uc --lintian-opts --profile debian
 script:
   - sudo apt install -y ../fits_1.4.0-1_all.deb
