@@ -1,5 +1,9 @@
 os: linux
-dist: xenial
+dist: 
+  - xenial
+  - trusty
+  - precise
+
 language: ruby
 cache: bundler
 rvm:
@@ -8,11 +12,10 @@ rvm:
 before_install:
   - sudo apt-get install -y build-essential devscripts debhelper dh-make fakeroot
   - cd fits-1.4.0
-  # # warning about no top level make file, using .install and .dirs instead
-  # - dh_make --yes --createorig --single || true
   - sudo debuild -us -uc --lintian-opts --profile debian
 install:
   - sudo apt install -y ../fits_1.4.0-1_all.deb
+
 before_script:
   - gem install bundler
   - bundle install
