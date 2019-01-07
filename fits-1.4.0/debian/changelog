@@ -1,5 +1,7 @@
 fits (1.4.0-1) unstable; urgency=medium
 
   * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+  debuild can't handle keys with comments! must include name, comment, and email
+  https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=217656  
 
- -- Conor Sheehan <conor.sheehan.dev@gmail.com>  Fri, 04 Jan 2019 15:09:44 +0100
+ -- Conor Sheehan (work laptop) <conor.sheehan.dev@gmail.com>  Fri, 04 Jan 2019 15:09:44 +0100
