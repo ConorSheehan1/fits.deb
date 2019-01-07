@@ -6,7 +6,7 @@ rvm:
   - 2.5.3
 
 before_install:
-  - sudo apt-get install -y build-essential devscripts debhelper dh-make
+  - sudo apt-get install -y build-essential devscripts debhelper dh-make fakeroot
   - cd fits-1.4.0
   # # warning about no top level make file, using .install and .dirs instead
   # - dh_make --yes --createorig --single || true

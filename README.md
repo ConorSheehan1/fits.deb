@@ -38,7 +38,7 @@ extract it
 `unzip fits-1.4.0.zip -d fits-1.4.0`
 
 requirements for building debian package  
-`sudo apt-get install build-essential devscripts debhelper dh-make`
+`sudo apt-get install build-essential devscripts debhelper dh-make fakeroot`
 
 run dh_make to build orig tar.gz and debian files  
 ```
