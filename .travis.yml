@@ -1,8 +1,5 @@
 os: linux
-dist: 
-  - xenial
-  - trusty
-  - precise
+dist: xenial
 
 language: ruby
 cache: bundler
@@ -21,3 +18,10 @@ before_script:
   - bundle install
 script:
   - bundle exec rspec
+
+matrix:
+  include:
+    - os: linux
+      dist: trusty
+    - os: linux
+      dist: precise
