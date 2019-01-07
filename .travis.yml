@@ -1,11 +1,17 @@
 os: linux
 dist: xenial
+language: ruby
+cache: bundler
+rvm:
+  - 2.5.3
 
 before_install:
   - sudo apt-get install -y build-essential devscripts debhelper dh-make
   - cd fits-1.4.0
   # # warning about no top level make file, using .install and .dirs instead
   # - dh_make --yes --createorig --single || true
-  - debuild -us -uc --lintian-opts --profile debian
-script:
+  - sudo debuild -us -uc --lintian-opts --profile debian
+install:
   - sudo apt install -y ../fits_1.4.0-1_all.deb
+script:
+  - bundle exec rspec
