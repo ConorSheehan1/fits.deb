@@ -1,6 +1,3 @@
-os: linux
-dist: xenial
-
 language: ruby
 cache: bundler
 rvm:
@@ -22,6 +19,8 @@ script:
 matrix:
   include:
     - os: linux
-      dist: trusty
+      dist: xenial
     - os: linux
-      dist: precise
+      dist: trusty
+    # precise doesn't recognize tar.xz
+    # possibly change ont git now that orig.tar is tracked?
