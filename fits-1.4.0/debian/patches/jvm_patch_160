@@ -1,11 +1,11 @@
 Description: patch jvm crash
  solution from https://github.com/harvard-lts/fits/issues/160
- comment out mediainfo 
+ comment out mediainfo
  .
  fits (1.4.0-1) unstable; urgency=medium
  .
    * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
-Author: virt <virt@unknown>
+Author: Conor Sheehan <conor.sheehan.dev@gmail.com>
 
 ---
 The information above should follow the Patch Tagging Guidelines, please
