@@ -13,5 +13,8 @@ before_install:
   - sudo debuild -us -uc --lintian-opts --profile debian
 install:
   - sudo apt install -y ../fits_1.4.0-1_all.deb
+before_script:
+  - gem install bundler
+  - bundle install
 script:
   - bundle exec rspec
