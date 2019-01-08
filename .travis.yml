@@ -8,7 +8,7 @@ before_install:
   - sudo apt-get install -y build-essential devscripts debhelper dh-make fakeroot
   - sudo debuild -us -uc --lintian-opts --profile debian
 install:
-  - sudo apt install -y $TRAVIS_BUILD_DIR/fits_1.4.0-1_all.deb
+  - sudo apt install -y $TRAVIS_BUILD_DIR/fits_1.4.0-2_all.deb
 
 before_script:
   - cd $TRAVIS_BUILD_DIR
