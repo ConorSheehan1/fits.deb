@@ -1,4 +1,4 @@
-fits (1.4.0-1) unstable; urgency=medium
+fits (1.4.0-1) xenial trusty; urgency=medium
 
   * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
   debuild can't handle keys with comments! must include name, comment, and email

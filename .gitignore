@@ -18,3 +18,4 @@ debhelper-build-stamp
 *.bak
 *.zip
 fits-1.4.0/debian/fits
+*.upload
