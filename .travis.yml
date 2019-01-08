@@ -13,7 +13,8 @@ install:
 before_script:
   - cd $TRAVIS_BUILD_DIR
   - gem install bundler
-  - bundle install
+  # no need to install byebug and other unused dev deps on travis
+  - bundle install --without development
 script:
   - cd $TRAVIS_BUILD_DIR
   - bundle exec rspec

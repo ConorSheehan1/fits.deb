@@ -1,13 +1,11 @@
-require 'nokogiri'
+# frozen_string_literal: true
+
+require "nokogiri"
 
 describe "fits 1.4.0" do
   before do
-    @images = %w[*.jpg *.png *.tiff].map do |ext|
-      Dir["#{@fixture_path}/#{ext}"]
-    end.flatten
-    @text_files = %w[*.txt *.md].map do |ext|
-      Dir["#{@fixture_path}/#{ext}"]
-    end.flatten
+    @images = fixtures_with_extensions(%w[*.jpg *.png *.tiff])
+    @text_files = fixtures_with_extensions(%w[*.txt *.md])
   end
   after do
     Dir["#{@fixture_path}/output/*"].map do |f|
@@ -15,25 +13,21 @@ describe "fits 1.4.0" do
     end
   end
   describe "version" do
+    before do
+      @output_file = "#{@fixture_path}/output/fits.version"
+      @command = "fits -version > #{@output_file}"
+    end
     it "should display a valid version" do
-      # TODO better way to test this, both output and capture fail
-      expect(system("fits -version > #{@fixture_path}/output/fits.version")).to be true
-      expect(File.read("#{@fixture_path}/output/fits.version")).to eq "1.4.0\n"
+      # TODO: better way to test this, both output and capture fail
+      expect(system(@command)).to be true
+      expect(File.read(@output_file)).to eq "1.4.0\n"
     end
   end
   describe "file classification" do
-    before do
-      @file = "example.png"
-      @command = "fits -i #{@fixture_path}/#{@file} -o \
-                  #{@fixture_path}/output/#{@file}.xml"
-    end
-    it "should write the classification to a valid xml file" do
-      expect(system(@command)).to be true
-      file = File.read("#{@fixture_path}/output/#{@file}.xml")
-      xml = Nokogiri::XML(file)
-      mimetype = xml.at('fits/identification/identity').attribute('mimetype').value
-      expect(mimetype).to eq "image/png"
-
-    end
+    it_behaves_like "it can classify", "example.png", "image/png"
+    it_behaves_like "it can classify", "example.jpg", "image/jpeg"
+    it_behaves_like "it can classify", "example.tiff", "image/tiff"
+    it_behaves_like "it can classify", "example.txt", "text/plain"
+    it_behaves_like "it can classify", "README.md", "text/markdown"
   end
 end

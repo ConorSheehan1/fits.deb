@@ -1,6 +1,10 @@
+AllCops:
+  Exclude:
+    - "fits-*/**/*"
+
 Metrics/BlockLength:
   Exclude:
-    - './spec/**/*'
+    - "./spec/**/*"
 
 Style/StringLiterals:
   EnforcedStyle: double_quotes

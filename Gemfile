@@ -1,8 +1,13 @@
-source 'https://rubygems.org'
+# frozen_string_literal: true
 
-gem "rspec", "~> 3.8"
-gem "byebug", "~> 10.0"
+source "https://rubygems.org"
 
-gem "nokogiri", "~> 1.10"
+group :development do
+  gem "byebug", "~> 10.0"
+  gem "rubocop", "~> 0.62.0"
+end
 
-gem "rubocop", "~> 0.62.0"
+group :test, :development do
+  gem "nokogiri", "~> 1.10"
+  gem "rspec", "~> 3.8"
+end
