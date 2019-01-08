@@ -4,16 +4,18 @@ rvm:
   - 2.5.3
 
 before_install:
-  - sudo apt-get install -y build-essential devscripts debhelper dh-make fakeroot
   - cd fits-1.4.0
+  - sudo apt-get install -y build-essential devscripts debhelper dh-make fakeroot
   - sudo debuild -us -uc --lintian-opts --profile debian
 install:
-  - sudo apt install -y ../fits_1.4.0-1_all.deb
+  - sudo apt install -y $TRAVIS_BUILD_DIR/fits_1.4.0-1_all.deb
 
 before_script:
+  - cd $TRAVIS_BUILD_DIR
   - gem install bundler
   - bundle install
 script:
+  - cd $TRAVIS_BUILD_DIR
   - bundle exec rspec
 
 matrix:
