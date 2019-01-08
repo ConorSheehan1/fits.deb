@@ -1,0 +1,40 @@
+Description:
+ Use absolute path for fits.log
+ Notes https://github.com/harvard-lts/fits/tree/be66a2e100e7a772c08c17b5a47658d7359ce2aa#logging
+
+ Without this patch you may encounter errors when fits can't write to ./fits.log.
+ Fits now writes to /usr/share/fits/fits.log instead of adding a new fits.log to the directory fits is called from.
+
+
+ .
+ fits (1.4.0-1) xenial; urgency=medium
+ .
+   * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+   debuild can't handle keys with comments! must include name, comment, and email
+   https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=217656
+Author: Conor Sheehan (work laptop) <conor.sheehan.dev@gmail.com>
+
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+Origin: <vendor|upstream|other>, <url of original patch>
+Bug: <url in upstream bugtracker>
+Bug-Debian: https://bugs.debian.org/<bugnumber>
+Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
+Forwarded: <no|not-needed|url proving that it has been forwarded>
+Reviewed-By: <name and email of someone who approved the patch>
+Last-Update: <YYYY-MM-DD>
+
+--- fits-1.4.0.orig/log4j.properties
++++ fits-1.4.0/log4j.properties
+@@ -48,7 +48,7 @@ log4j.appender.CONSOLE.layout.Conversion
+ #
+ #------------------------------------------------------------------------------
+ log4j.appender.FILE = org.apache.log4j.RollingFileAppender
+-log4j.appender.FILE.File = ./fits.log
++log4j.appender.FILE.File = /usr/share/fits/fits.log
+ log4j.appender.FILE.Threshold=ERROR
+ log4j.appender.FILE.Append = true
+ log4j.appender.FILE.MaxFileSize=10MB

@@ -15,7 +15,6 @@ debhelper-build-stamp
 /*/debian/hello
 /*/debian/files
 /*/hello
-/tutorial-1/packageroot/usr
 *.bak
 *.zip
 fits-1.4.0/debian/fits

@@ -1,3 +1,9 @@
+fits (1.4.0-2) UNRELEASED; urgency=medium
+
+  * Use absolute path for fits.log
+
+ -- Conor Sheehan (work laptop) <conor.sheehan.dev@gmailcom>  Tue, 08 Jan 2019 15:58:23 +0000
+
 fits (1.4.0-1) xenial; urgency=medium
 
   * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>

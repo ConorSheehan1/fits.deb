@@ -80,6 +80,9 @@ patch the fits.xml file
 dpkg-source --commit
 ```
 
+add to changelog  
+`dch -i`
+
 add debian/fits.install, debian/fits.dirs with the necessary files / dirs
 
 build the deb file (unsigned for now)  

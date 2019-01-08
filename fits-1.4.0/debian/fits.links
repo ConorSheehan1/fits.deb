@@ -1,1 +1,2 @@
-/opt/local/fits/fits.sh          usr/local/bin/fits
+/usr/share/fits/fits.sh           usr/bin/fits
+/usr/share/fits/fits-ngserver.sh  usr/bin/fits-ngserver
