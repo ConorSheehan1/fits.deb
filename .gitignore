@@ -1,3 +1,4 @@
+# deb pkg files
 debhelper-build-stamp
 .DS_Store
 .debhelper
@@ -19,3 +20,7 @@ debhelper-build-stamp
 *.zip
 fits-1.4.0/debian/fits
 *.upload
+
+
+# ruby files
+.byebug_history

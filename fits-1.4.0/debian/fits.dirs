@@ -1,4 +1,4 @@
-usr/share/fits
-usr/share/fits/lib
-usr/share/fits/tools
-usr/share/fits/xml
+opt/local/fits
+opt/local/fits/lib
+opt/local/fits/tools
+opt/local/fits/xml
