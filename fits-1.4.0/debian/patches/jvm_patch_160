@@ -2,7 +2,7 @@ Description: patch jvm crash
  solution from https://github.com/harvard-lts/fits/issues/160
  comment out mediainfo
  .
- fits (1.4.0-1) xenial trusty; urgency=medium
+ fits (1.4.0-1) xenial; urgency=medium
  .
    * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
 Author: Conor Sheehan <conor.sheehan.dev@gmail.com>
