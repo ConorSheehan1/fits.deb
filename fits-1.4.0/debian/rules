@@ -29,7 +29,7 @@ override_dh_strip_nondeterminism: ;
 # touch empty log file
 override_dh_install:
 	dh_install
-	mkdir -p usr/share/fits
-	touch usr/share/fits/fits.log
-	chmod +rw usr/share/fits/fits.log
+	mkdir -p /usr/share/fits
+	touch /usr/share/fits/fits.log
+	chmod ugo+rw /usr/share/fits/fits.log
 

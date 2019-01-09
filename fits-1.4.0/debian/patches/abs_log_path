@@ -3,11 +3,9 @@ Description:
  Notes https://github.com/harvard-lts/fits/tree/be66a2e100e7a772c08c17b5a47658d7359ce2aa#logging
 
  Without this patch you may encounter errors when fits can't write to ./fits.log.
- Fits now writes to /usr/share/fits/fits.log instead of adding a new fits.log to the directory fits is called from.
-
-
+ Fits now writes to /usr/share/fits/fits.log instead of adding a new fits.log to the directory fits is called from
  .
- fits (1.4.0-1) xenial; urgency=medium
+ fits (1.4.0-2) xenial; urgency=medium
  .
    * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
    debuild can't handle keys with comments! must include name, comment, and email
