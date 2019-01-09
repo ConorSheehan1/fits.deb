@@ -11,6 +11,10 @@ For more information on fits see:
 https://github.com/harvard-lts/fits  
 https://projects.iq.harvard.edu/fits
 
+## Debian compatibility 
+
+Please note that in order to run on debian systems, the mediainfo jar was commented out. See https://github.com/harvard-lts/fits/issues/160. This means fits will not be able to classify some video file formats.
+
 ## Install
 
 #### From the ppa
