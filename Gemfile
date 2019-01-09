@@ -12,4 +12,3 @@ group :test, :development do
   gem "nokogiri", "~> 1.10"
   gem "rspec", "~> 3.8"
 end
-

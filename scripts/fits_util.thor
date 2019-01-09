@@ -15,14 +15,21 @@ class FitsUtil < Thor
   method_option :createorig, type: :boolean, default: false, required: false,
                              desc: "remove old orig.tar and create new one"
   def build(version = "1.4.0")
-    target_dir = fits_dir(version)
-    puts("in dir: #{target_dir}")
-    Dir.chdir(target_dir) do
+    in_fits_dir(version) do
       create_orig if options["createorig"]
       debuild_args = options["sign"] ? "-S -sa" : "-us -uc"
       system_command(
         "sudo debuild #{debuild_args} --lintian-opts --profile debian"
       )
+    end
+  end
+
+  desc "commit VERSION (default = 1.4.0)",
+       "make patch file and changelog for latest changes"
+  def commit(version = "1.4.0")
+    in_fits_dir(version) do
+      system_command("dpkg-source --commit")
+      system_command("dch -i")
     end
   end
 
@@ -49,8 +56,15 @@ class FitsUtil < Thor
                else
                  Dir["#{__dir__}/../*.deb"].max
                end
-    command = "sudo apt install #{File.absolute_path(deb_file)}"
-    system_command(command)
+    system_command("sudo apt install #{File.absolute_path(deb_file)}")
+  end
+
+  desc "uninstall", "uninstall ppa and fits"
+  def uninstall
+    system_command(
+      "sudo add-apt-repository --remove ppa:conorsheehan1/fits-ppa"
+    )
+    system_command("sudo apt-get remove --purge fits")
   end
 
   desc "publish", "publish the latest changes"
@@ -86,6 +100,16 @@ class FitsUtil < Thor
     fits_src_dir
   end
 
+  # @param [String] version
+  def in_fits_dir(version, &_block)
+    target_dir = fits_dir(version)
+    puts("in dir: #{target_dir}")
+    Dir.chdir(target_dir) do
+      yield
+    end
+  end
+
+  # @param [String] command
   def system_command(command)
     puts(command)
     system(command) unless options["debug"]
