@@ -4,15 +4,16 @@ rvm:
   - 2.5.3
 
 before_install:
-  - sudo apt-get install -y build-essential devscripts debhelper dh-make fakeroot
-  - ./scripts/fits_util.thor build
-install:
-  - ./scripts/fits_util.thor install latest
-
-before_script:
   - gem install bundler
   # no need to install byebug and other unused dev deps on travis
   - bundle install --without development
+  # dev utils / scripts for building .deb packages
+  - sudo apt-get install -y build-essential devscripts debhelper dh-make fakeroot
+  - ./scripts/fits_util.thor build
+
+install:
+  - ./scripts/fits_util.thor install latest
+
 script:
   - bundle exec rspec
 
