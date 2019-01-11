@@ -4,19 +4,16 @@ rvm:
   - 2.5.3
 
 before_install:
-  - cd fits-1.4.0
   - sudo apt-get install -y build-essential devscripts debhelper dh-make fakeroot
-  - sudo debuild -us -uc --lintian-opts --profile debian
+  - ./scripts/fits_util.thor build
 install:
-  - sudo apt install -y $TRAVIS_BUILD_DIR/fits_1.4.0-2_all.deb
+  - ./scripts/fits_util.thor install latest
 
 before_script:
-  - cd $TRAVIS_BUILD_DIR
   - gem install bundler
   # no need to install byebug and other unused dev deps on travis
   - bundle install --without development
 script:
-  - cd $TRAVIS_BUILD_DIR
   - bundle exec rspec
 
 matrix:

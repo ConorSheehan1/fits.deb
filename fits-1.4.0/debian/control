@@ -11,4 +11,18 @@ Vcs-Browser: https://github.com/ConorSheehan1/fits.deb
 Package: fits
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}, default-jre-headless | java7-runtime-headless
-Description: Harvard File Information Tool Set
+Description: Harvard File Information Tool Set.
+  FITS identifies, validates and extracts technical metadata for a wide range of file formats. It acts as a wrapper, invoking and managing the output from several other open source tools. The tools in this version of fits are:
+  ADL Tool
+  Apache Tika
+  DROID
+  Exiftool
+  FFIdent (no longer maintained - the archived website can be found here)
+  File Utility (windows port)
+  Jhove
+  MediaInfo (not compatible with debian, see https://github.com/harvard-lts/fits/issues/160)
+  National Library of New Zealand Metadata Extractor
+  OIS Audio Information
+  OIS File Information
+  OIS XML Information
+
